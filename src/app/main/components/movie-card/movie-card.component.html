@@ -1,0 +1,18 @@
+<mat-card class="card">
+  <mat-card-header class="card-header">
+    <img src="{{ movieCardData.Images[0] }}" alt="poster" class="poster" />
+    <span class="movie-title"
+      ><h3>{{ movieCardData.Title }}</h3></span
+    >
+  </mat-card-header>
+  <mat-card-content class="content">
+    <div class="row-container">
+      <span>{{ movieCardData.Rated }}</span>
+      <span>/</span>
+      <span>{{ movieCardData.Country }}</span>
+    </div>
+    <div>
+      <span>{{ movieCardData.Actors }}</span>
+    </div>
+  </mat-card-content>
+</mat-card>

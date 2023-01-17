@@ -1,0 +1,81 @@
+.detailed-view {
+  width: 60%;
+  height: 100%;
+  margin: 0 auto;
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px #ccc;
+}
+
+.detailed-header {
+  height: auto;
+  padding: 20px;
+  border-radius: 10px 10px 0 0;
+  background-color: #ccc;
+  color: #fff;
+  text-align: center;
+}
+
+.poster {
+  width: 250px;
+  height: auto;
+  margin: 0 20px 0 0;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px #ccc;
+}
+
+.movie-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 2px 2px #ccc;
+}
+
+.detailed-content {
+  height: 100%;
+  border-radius: 0 0 10px 10px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  overflow: auto;
+}
+
+.row-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.actors {
+  text-align: center;
+}
+
+.my-interest {
+  color: green;
+  font-size: 36px;
+  text-align: center;
+}
+
+// .rating-container {
+//   /* use flexbox to display the Metascore, IMDB Rating, and IMDB Votes in one row */
+//   display: flex;
+//   justify-content: space-between;
+//   // margin: 20px 0;
+// }
+
+.images-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.movie-image {
+  width: 150px;
+  height: auto;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px #ccc;
+}

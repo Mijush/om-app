@@ -1,0 +1,50 @@
+<div mat-dialog-content>
+  <form
+    class="form"
+    [formGroup]="movieFilterForm"
+    (ngSubmit)="onFilterMoviesFormSubmit()"
+  >
+    <mat-form-field>
+      <mat-select name="rated" formControlName="rated" id="rated">
+        <mat-option
+          *ngFor="let filterRated of filterSelectorRated"
+          value="{{ filterRated }}"
+        >
+          {{ filterRated }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+      <mat-select name="genre" formControlName="genre" id="genre">
+        <mat-option
+          *ngFor="let filterGenre of filterSelectorGenre"
+          value="{{ filterGenre }}"
+        >
+          {{ filterGenre }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+      <mat-select name="type" formControlName="type" id="type">
+        <mat-option
+          *ngFor="let filterType of filterSelectorType"
+          value="{{ filterType }}"
+        >
+          {{ filterType }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br />
+
+    <button
+      mat-raised-button
+      [mat-dialog-close]="data"
+      cdkFocusInitial
+      type="submit"
+    >
+      Filter
+    </button>
+  </form>
+</div>

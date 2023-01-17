@@ -1,0 +1,42 @@
+<div class="wrapper">
+  <div>
+    <h1>Welcome {{ user }}</h1>
+    <form
+      class="form"
+      [formGroup]="movieSearchForm"
+      (ngSubmit)="onMovieSearchFormSubmit()"
+    >
+      <mat-form-field>
+        <mat-label>Movie Title</mat-label>
+        <input
+          matInput
+          type="text"
+          formControlName="movieTitle"
+          id="movieTitle"
+          required
+          minlength="1"
+        />
+        <mat-hint *ngIf="searchError">
+          Search query is <strong>required</strong>
+        </mat-hint>
+      </mat-form-field>
+      <br />
+      <button type="submit" mat-raised-button>Search</button>
+      <mat-hint *ngIf="noMoviesAlert">No movies were found!</mat-hint>
+    </form>
+    <br />
+    <button mat-raised-button type="button" (click)="openFilterModal()">
+      Filter
+    </button>
+    <br />
+  </div>
+
+  <div class="cards-container">
+    <div class="card" *ngFor="let movie of movies$ | async">
+      <app-movie-card
+        [movieCardData]="movie"
+        (click)="openMovieDetailedView(movie)"
+      ></app-movie-card>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<mat-card class="detailed-view">
+  <mat-card-header class="detailed-header">
+    <img src="{{ movie.Images[0] }}" alt="poster" class="poster" />
+    <span class="movie-title"
+      ><h3>{{ movie.Title }}</h3></span
+    >
+    <div class="row-container">
+      <span>
+        <span>{{ movie.Rated }}</span>
+        <span>/</span>
+        <span>{{ movie.Country }}</span>
+      </span>
+      <span class="actors">
+        {{ movie.Actors }}
+      </span>
+    </div>
+  </mat-card-header>
+
+  <mat-card-content class="detailed-content">
+    <div *ngIf="movie.Genre.includes(prefferedGenre)" class="my-interest">
+      My Interest
+    </div>
+    <div>
+      <span>{{ movie.Writers }}</span>
+    </div>
+    <div class="rating-container">
+      <mat-grid-list cols="2" rowHeight="50px">
+        <mat-grid-tile
+          ><h4>Metascore: {{ movie.Metascore }}</h4></mat-grid-tile
+        >
+        <mat-grid-tile
+          ><h4>IMDB Rating: {{ movie.imdbRating }}</h4></mat-grid-tile
+        >
+        <mat-grid-tile
+          ><h4>IMDB Votes: {{ movie.imdbVotes }}</h4></mat-grid-tile
+        >
+        <mat-grid-tile
+          ><h4>Release Date: {{ movie.Released }}</h4></mat-grid-tile
+        >
+      </mat-grid-list>
+    </div>
+    <div>
+      <span>{{ movie.Plot }}</span>
+    </div>
+    <div class="images-container">
+      <img
+        *ngFor="let img of movie.Images"
+        src="{{ img }}"
+        alt="movie image"
+        class="movie-image"
+      />
+    </div>
+  </mat-card-content>
+</mat-card>
