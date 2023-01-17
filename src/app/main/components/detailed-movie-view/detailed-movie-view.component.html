@@ -1,10 +1,14 @@
-<mat-card class="detailed-view">
+<mat-card *ngIf="movie" class="detailed-view">
   <mat-card-header class="detailed-header">
     <img src="{{ movie.Images[0] }}" alt="poster" class="poster" />
-    <span class="movie-title"
-      ><h3>{{ movie.Title }}</h3></span
-    >
+
     <div class="row-container">
+      <button mat-raised-button (click)="navigateToMainPage()">
+        Go back to main page
+      </button>
+      <span class="movie-title"
+        ><h3>{{ movie.Title }}</h3></span
+      >
       <span>
         <span>{{ movie.Rated }}</span>
         <span>/</span>
@@ -17,7 +21,7 @@
   </mat-card-header>
 
   <mat-card-content class="detailed-content">
-    <div *ngIf="movie.Genre.includes(prefferedGenre)" class="my-interest">
+    <div *ngIf="movie.Genre.includes(preferredGenre)" class="my-interest">
       My Interest
     </div>
     <div>

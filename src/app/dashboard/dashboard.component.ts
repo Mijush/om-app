@@ -11,22 +11,13 @@ import { MovieAPIService } from '../services/movieAPI.service';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  genres: Set<string> = new Set();
+  genres: string[] = [];
   user: string = '';
   genreForm!: FormGroup;
   constructor(private router: Router, private ms: MovieAPIService) {}
   ngOnInit(): void {
-    this.ms
-      .getAllMovies()
-      .pipe(take(1))
-      .subscribe((movies: [Movie]) => {
-        this.ms.allMovies$.next(movies);
-        movies
-          .map((movie) => movie.Genre.split(','))
-          .flat()
-          .forEach((genre) => this.genres.add(genre));
-      });
-
+    this.ms;
+    this.ms.genres$.subscribe((genres) => (this.genres = genres));
     this.initForm();
   }
 
@@ -36,9 +27,9 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  prefferedGenreSubmit() {
+  preferredGenreSubmit() {
     localStorage.setItem('user', this.user);
     this.router.navigate(['/main']);
-    this.ms.prefferedGenre$.next(this.genreForm.value.genre);
+    this.ms.preferredGenre$.next(this.genreForm.value.genre);
   }
 }

@@ -1,10 +1,11 @@
-<form
-  class="example-form"
-  [formGroup]="genreForm"
-  (ngSubmit)="prefferedGenreSubmit()"
->
-  <div class="form-wrapper">
+<div class="container">
+  <form
+    [formGroup]="genreForm"
+    (ngSubmit)="preferredGenreSubmit()"
+    class="form-wrapper"
+  >
     <mat-form-field>
+      <mat-label>Your Name:</mat-label>
       <input
         matInput
         [(ngModel)]="user"
@@ -12,6 +13,7 @@
       />
     </mat-form-field>
     <mat-form-field appearance="fill">
+      <mat-label>Your preferred genre:</mat-label>
       <mat-select formControlName="genre" id="genre">
         <mat-option *ngFor="let genre of genres" [value]="genre">
           {{ genre }}
@@ -19,5 +21,5 @@
       </mat-select>
     </mat-form-field>
     <button type="submit" mat-raised-button>Continue</button>
-  </div>
-</form>
+  </form>
+</div>

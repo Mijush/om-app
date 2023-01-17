@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MovieAPIService } from 'src/app/services/movieAPI.service';
 
 @Component({
@@ -7,13 +8,17 @@ import { MovieAPIService } from 'src/app/services/movieAPI.service';
   styleUrls: ['./detailed-movie-view.component.scss'],
 })
 export class DetailedMovieViewComponent implements OnInit {
-  constructor(private ms: MovieAPIService) {}
+  constructor(private ms: MovieAPIService, private router: Router) {}
   movie: any;
-  prefferedGenre: string = '';
+  preferredGenre: string = '';
   ngOnInit() {
     this.ms.movieDetailedViewData$.subscribe((movie) => (this.movie = movie));
-    this.ms.prefferedGenre$.subscribe((genre) => {
-      this.prefferedGenre = genre;
+    this.ms.preferredGenre$.subscribe((genre) => {
+      this.preferredGenre = genre;
     });
+  }
+
+  navigateToMainPage() {
+    this.router.navigate(['/main']);
   }
 }

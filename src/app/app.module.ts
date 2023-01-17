@@ -13,7 +13,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MovieCardComponent } from './main/components/movie-card/movie-card.component';
 import { MatCardModule } from '@angular/material/card';
-import { FilterMoviesPipe } from './pipes/filter-movies.pipe';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FiltersPopoverComponent } from './main/components/filters-popover/filters-popover.component';
 import { DetailedMovieViewComponent } from './main/components/detailed-movie-view/detailed-movie-view.component';
@@ -25,7 +24,6 @@ import { MatGridListModule } from '@angular/material/grid-list';
     DashboardComponent,
     MainComponent,
     MovieCardComponent,
-    FilterMoviesPipe,
     FiltersPopoverComponent,
     DetailedMovieViewComponent,
   ],

@@ -4,8 +4,14 @@
     [formGroup]="movieFilterForm"
     (ngSubmit)="onFilterMoviesFormSubmit()"
   >
+    <mat-label class="label">Filter movies by:</mat-label>
     <mat-form-field>
-      <mat-select name="rated" formControlName="rated" id="rated">
+      <mat-select
+        placeholder="Rated:"
+        name="rated"
+        formControlName="rated"
+        id="rated"
+      >
         <mat-option
           *ngFor="let filterRated of filterSelectorRated"
           value="{{ filterRated }}"
@@ -14,9 +20,14 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
-    <br />
+
     <mat-form-field>
-      <mat-select name="genre" formControlName="genre" id="genre">
+      <mat-select
+        placeholder="Genre:"
+        name="genre"
+        formControlName="genre"
+        id="genre"
+      >
         <mat-option
           *ngFor="let filterGenre of filterSelectorGenre"
           value="{{ filterGenre }}"
@@ -25,9 +36,14 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
-    <br />
+
     <mat-form-field>
-      <mat-select name="type" formControlName="type" id="type">
+      <mat-select
+        placeholder="Type"
+        name="type"
+        formControlName="type"
+        id="type"
+      >
         <mat-option
           *ngFor="let filterType of filterSelectorType"
           value="{{ filterType }}"
@@ -36,7 +52,6 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
-    <br />
 
     <button
       mat-raised-button

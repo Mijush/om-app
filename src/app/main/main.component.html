@@ -1,10 +1,11 @@
 <div class="wrapper">
-  <div>
+  <div class="header">
     <h1>Welcome {{ user }}</h1>
+    <!-- <div class="form-wrapper"> -->
     <form
-      class="form"
       [formGroup]="movieSearchForm"
       (ngSubmit)="onMovieSearchFormSubmit()"
+      class="form"
     >
       <mat-form-field>
         <mat-label>Movie Title</mat-label>
@@ -20,15 +21,13 @@
           Search query is <strong>required</strong>
         </mat-hint>
       </mat-form-field>
-      <br />
       <button type="submit" mat-raised-button>Search</button>
       <mat-hint *ngIf="noMoviesAlert">No movies were found!</mat-hint>
+      <button mat-raised-button type="button" (click)="openFilterModal()">
+        Filter
+      </button>
     </form>
-    <br />
-    <button mat-raised-button type="button" (click)="openFilterModal()">
-      Filter
-    </button>
-    <br />
+    <!-- </div> -->
   </div>
 
   <div class="cards-container">
