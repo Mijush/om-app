@@ -25,3 +25,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## Json server was implemented in order to fetch the data for the movies as API calls
+The run the json server in order the angular app to have data, you need to navigate to server folder in terminal and run: " json server --watcg api.json "
